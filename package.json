@@ -1,0 +1,28 @@
+{
+  "name": "mintbook",
+  "version": "1.0.0",
+  "description": "Social Media web app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueValente09/Mintbook.git"
+  },
+  "author": "Henrique Valente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueValente09/Mintbook/issues"
+  },
+  "homepage": "https://github.com/HenriqueValente09/Mintbook#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "helmet": "^5.0.2",
+    "mongoose": "^6.2.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
