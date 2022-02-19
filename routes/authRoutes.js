@@ -22,23 +22,18 @@ router.post('/register', async (req, res) => {
     res.render('login')
 });
 
-router.post('/register', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
-        const salt = await bcrypt.genSalt(10)
-        const hashedPassword = await bcrypt.hash(req.body.password, salt)
+        const user = await User.findOne({email: req.body.email})
+        !user && res.send('User not found!')
 
-        const newUser = new User({
-            username: req.body.name,
-            email: req.body.email,
-            password: hashedPassword
-        })
+        const validPassword = await bcrypt.compare(req.body.password, user.password)
+        !validPassword && res.status(400).json('Wrong password!')
 
-        await newUser.save()
+        res.status(200).json(user)
     }catch (err){
-        console.log(err);
+        console.log('Error');
     }
-
-    res.render('login')
 });
 
 module.exports = router
