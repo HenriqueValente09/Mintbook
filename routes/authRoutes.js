@@ -1,5 +1,6 @@
 const express = require('express');
 const User = require('../models/user')
+const Post = require('../models/post')
 const router = express.Router();
 const bcrypt = require('bcrypt')
 
@@ -30,9 +31,12 @@ router.post('/login', async (req, res) => {
         const validPassword = await bcrypt.compare(req.body.password, user.password)
         !validPassword && res.status(400).json('Wrong password!')
 
-        res.status(200).json(user)
+        res.status(200).render('user/main', {
+            user: user,
+            posts: Post.find({}).sort({date: 'descending'}).exec((err, docs) => {})
+        })
     }catch (err){
-        console.log('Error');
+        console.log(err);
     }
 });
 

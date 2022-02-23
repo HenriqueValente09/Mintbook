@@ -1,0 +1,27 @@
+<%- include('../includes/head') %>
+<link rel="stylesheet" href="/css/user.css">
+</head>
+
+<body>
+  <%- include('../includes/header') %>
+  <main>
+    <div class="container">
+      <div class="new-post-box">
+          <form action="/api/user/addPost">
+              <input type="url">
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <input type="submit" class="new-post-submit" value="create post">
+          </form>
+      </div>
+    </div>
+    <div class="user-table">
+
+    </div>
+    <div class="posts">
+      <div class="new-post">
+        <div class="new-post-btn">New post</div>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>

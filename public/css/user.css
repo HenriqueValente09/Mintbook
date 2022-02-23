@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 8vh;
+    background-color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 0 25px;
+}
+
+header nav {
+    margin: 0 25px;
+}
+
+header nav ul {
+    list-style: none;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+main {
+    height: 92vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main .posts {
+    border-left: 2px solid rgba(128, 128, 128, 0.75);
+    border-right: 2px solid rgba(128, 128, 128, 0.75);
+    width: 50vw;
+    height: 100%;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+main .user-table {
+    width: 20vw;
+    height: 100%;
+}
+
+.posts .new-post {
+    width: 100%;
+    margin: 0;
+    height: 35px;
+    background-color: rgb(180, 180, 180);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.new-post .new-post-btn {
+    background-color: navy;
+    font-family: sans-serif;
+    color: white;
+    padding: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-post-box {
+    width: 650px;
+    height: 450px;
+    background-color: white;
+    position: relative;
+    padding: 0;
+}
+
+.new-post-box form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.new-post-box input:nth-child(1), .new-post-box textarea {
+    border: 2px solid grey;
+    border-radius: 6px;
+    width: 90%;
+    height: 40px;
+}
+
+.new-post-box input:focus {
+    outline-style: none;
+}
+
+.new-post-box textarea{
+    height: 180px;
+}
+
+.new-post-box .new-post-submit {
+    width: 25%;
+    height: 80px;
+    background-color: navy;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold
+}
